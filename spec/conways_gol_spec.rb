@@ -31,3 +31,15 @@ describe 'Cell' do
     expect(test_cell.used).to eq true
    end
 end
+
+describe 'World' do
+  it 'Creates a world' do
+    test_world = World.new(10)
+    expect(test_world).to be_an_instance_of (World)
+  end
+  it 'Creates a grid based on the inputted dimensions' do
+    test_world = World.new(20)
+    test_world.define_size
+    expect(test_world.grid.length).to eq (20)
+  end
+end
