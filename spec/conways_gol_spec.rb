@@ -42,4 +42,21 @@ describe 'World' do
     test_world.define_size
     expect(test_world.grid.length).to eq (20)
   end
+  it 'Populates present and future world with cells' do
+    test_world = World.new(30)
+    test_world.define_size
+    test_world.populate
+    expect(test_world.grid[0][0].class).to eq (Cell)
+    expect(test_world.grid[29][29].class).to eq (Cell)
+  end
+  it 'Seeds the chosen world with births' do
+    test_world = World.new(50)
+    test_world.define_size
+    test_world.populate
+    test_world.seed
+    any_alive = test_world.grid.any? do |row|
+      row.any? { |cell| cell.alive }
+    end
+    expect(any_alive).to eq true
+  end
 end
