@@ -59,6 +59,17 @@ describe 'World' do
     end
     expect(any_alive).to eq true
   end
+  it 'Proliferates into new grid' do
+    test_world = World.new(50)
+    test_world.define_size
+    test_world.populate
+    test_world.seed
+    test_world.proliferate
+    any_alive = test_world.new_grid.any? do |row|
+      row.any? { |cell| cell.alive }
+    end
+    expect(any_alive).to eq true
+  end
 end
 
 describe 'Rules' do
