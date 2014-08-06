@@ -42,7 +42,11 @@ def start_game
     sleep(0.1)
     start_game
   else
-    @new_world = World.new(size)
+    puts "Please enter percent of populated cells (1-99)"
+    percent = gets.chomp.to_i
+    puts "Please enter growth speed (1-100)"
+    percent = gets.chomp.to_i
+    @new_world = World.new(size,percent)
     @new_world.define_size
     @new_world.populate
     @new_world.seed
@@ -56,11 +60,21 @@ def play
     system 'clear'
     @new_world.proliferate
     display(@new_world.grid)
+    if i == @new_world.count
+      puts "\n"
+      puts "Oh no! Life failed to bloom... Press enter to try again!"
+      gets.chomp
+      start_game
+    else
+      i = @new_world.count
+    end
     puts ""
     puts "Press Control + C to exit"
-    sleep(0.15)
+    sleep(1)
   end
 end
+
+
 
 def display(grid)
   grid.each do |row|

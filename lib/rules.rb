@@ -3,6 +3,7 @@ def neighbor_check(grid,row,column)
   size = grid.length - 1
   result = "remain"
 
+#wrap
   next_row = row + 1
   last_row = row - 1
   next_column = column + 1
@@ -21,14 +22,7 @@ def neighbor_check(grid,row,column)
     next_column = 0
   end
 
-  # puts "--------"
-  # puts "row #{row}"
-  # puts "last row #{last_row}"
-  # puts "next row #{next_row}"
-  # puts "column #{column}"
-  # puts "last_column #{last_column}"
-  # puts "next_column #{next_column}"
-
+#count
   if grid[last_row][last_column].alive
     neighbors += 1
   end
@@ -54,6 +48,7 @@ def neighbor_check(grid,row,column)
     neighbors += 1
   end
 
+#rules
   if grid[row][column].alive
     if neighbors < 2
       result = "kill"

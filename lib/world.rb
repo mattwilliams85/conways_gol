@@ -1,9 +1,10 @@
 class World
   attr_accessor :grid, :dimension, :new_grid
 
-  def initialize(dimension)
+  def initialize(dimension, percent_alive)
     @grid = []
     @dimension = dimension
+    @percent_alive = percent_alive/10
   end
 
   def define_size
@@ -22,7 +23,7 @@ class World
   def seed
     @grid.each do |row|
       row.each do |cell|
-        if (rand(1..10) == 10)
+        if (rand(@percent_alive..10) == 10)
           cell.birth
         end
       end
@@ -49,5 +50,17 @@ class World
     end
     @grid = @new_grid
   end
+
+  def count
+  count = 0
+  @grid.each do |row|
+    row.each do |cell|
+      if cell.alive == true
+      count += 1
+      end
+    end
+  end
+  count
+end
 
 end
