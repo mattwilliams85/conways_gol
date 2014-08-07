@@ -31,9 +31,9 @@ end
 
 def start_game
   system "clear"
-  puts "Please enter game size (50-100)"
-  size = gets.chomp.to_i
-  if size > 100
+  puts "Please enter game size (1-99)"
+  size = gets.chomp.to_i/2 + 50
+  if size > 99
     puts "Too large!"
     sleep(0.1)
     start_game
@@ -44,8 +44,8 @@ def start_game
   else
     puts "Please enter percent of populated cells (1-99)"
     percent = gets.chomp.to_i
-    puts "Please enter growth speed (1-100)"
-    percent = gets.chomp.to_i
+    puts "Please enter growth speed (1-99)"
+    @speed = gets.chomp.to_f
     @new_world = World.new(size,percent)
     @new_world.define_size
     @new_world.populate
@@ -70,7 +70,7 @@ def play
     end
     puts ""
     puts "Press Control + C to exit"
-    sleep(1)
+    sleep((100 - @speed)/10)
   end
 end
 
