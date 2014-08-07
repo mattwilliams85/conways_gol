@@ -12,13 +12,9 @@ Clone this repository or download the .zip and open up the index.html file in th
 How To Play <br />
 1. Once in the correct directory, enter 'ruby menu.rb' into the command line. <br />
 2. Maximize your console window. <br />
-3. Choose the size, popluation, and speed of your game. There's no bad combinations! <br />
+3. Choose a new-game with preset conditions or set your own in custom game! <br />
 4. Hit control + c to break the loop and exit.
 
-Suggested Settings: <br />
-Size - 99 <br />
-Popluation - 5 <br />
-Speed - 90
 
 
 Dependencies <br />
