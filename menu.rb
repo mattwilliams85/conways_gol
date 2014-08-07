@@ -26,6 +26,8 @@ def main_menu
   else
     system 'clear'
     puts "Invalid! Try again"
+    sleep(0.5)
+    main_menu
   end
 end
 
@@ -74,8 +76,6 @@ def play
   end
 end
 
-
-
 def display(grid)
   grid.each do |row|
     puts ""
@@ -92,8 +92,3 @@ def display(grid)
 end
 
 main_menu
-
-
-
-
-

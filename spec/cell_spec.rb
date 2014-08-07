@@ -27,4 +27,3 @@ describe 'Cell' do
     expect(test_cell.used).to eq true
    end
 end
-

@@ -52,15 +52,15 @@ class World
   end
 
   def count
-  count = 0
-  @grid.each do |row|
-    row.each do |cell|
-      if cell.alive == true
-      count += 1
+    count = 0
+    @grid.each do |row|
+      row.each do |cell|
+        if cell.alive == true
+          count += 1
+        end
       end
     end
+    count
   end
-  count
 end
 
-end
