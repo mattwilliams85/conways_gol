@@ -1,5 +1,3 @@
 require 'cell'
 require 'world'
-require 'rules'
 require 'rspec'
-require 'pry'
